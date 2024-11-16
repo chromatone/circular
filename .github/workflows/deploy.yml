@@ -26,8 +26,9 @@ jobs:
           node-version: 20
 
       - uses: pnpm/action-setup@v4
-        with:
-          run_install: true
+
+      - name: Install dependencies
+        run: pnpm i --no-frozen-lockfile
 
       - name: Build project
         run: pnpm run build
