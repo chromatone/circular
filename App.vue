@@ -1,6 +1,7 @@
 <script setup>
 import { ref, watch } from 'vue';
 import { onKeyDown, useCycleList } from '@vueuse/core';
+import RhythmCircle from './components/RhythmCircle.vue'
 
 
 import { version, year } from './package.json'
@@ -35,6 +36,7 @@ import { version, year } from './package.json'
 
 
   .flex.flex-col.p-2.pb-12.pt-4.gap-2 CIRCULAR
+    RhythmCircle
 </template>
 
 <style lang="postcss">
