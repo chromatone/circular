@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Circular polyrhythmic metronome by Chromatone</title>
+  <meta name="theme-color" content="black">
+  <meta name="application-name" content="Circular">
+  <meta name="author" content="Denis Starov">
+  <meta name="creator" content="Chromatone">
+  <meta name="description" content="Circular polyrhythmic metronomep">
+  <meta property="og:title" content="Circular metronome by Chromatone">
+  <meta property="og:site_name" content="Circular">
+  <meta property="og:description" content="Circular polyrhythmic metronome">
+  <meta property="og:image" content="/screenshot-w.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="Circular polyrhythmic metronome">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:label1" content="Circular metronome">
+  <meta name="twitter:label2" content="Elements">
+  <meta name="twitter:site" content="@davay42">
+  <meta name="twitter:creator" content="@davay42">
+  <meta name="twitter:image:type" content="image/png">
+  <!-- <meta name="twitter:image" content="/screenshot-w.png"> -->
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-touch-fullscreen" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Circular">
+
+  <link rel="icon" type="image/svg+xml" href="/logo.svg">
+  <link rel="apple-touch-icon" href="/icon.png" sizes="512x512">
+
+  <link rel="manifest" href="/manifest.json">
+
+  <!-- Stats production build insert -->
+
+</head>
+
+<body>
+  <div id="app"></div>
+  <script type="module">
+    import '@unocss/reset/tailwind.css'
+    import 'virtual:uno.css'
+
+    import { createApp } from 'vue'
+    import App from './App.vue'
+
+    createApp(App).mount('#app')
+  </script>
+</body>
+
+</html>
