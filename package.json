@@ -49,7 +49,9 @@
 	"devDependencies": {
 		"@iconify-json/fluent": "^1.2.4",
 		"@iconify-json/la": "^1.2.0",
+		"@iconify-json/mdi": "1.2.1",
 		"@iconify-json/tabler": "^1.2.6",
+		"@iconify-json/healthicons": "^1.2.1",
 		"@unocss/extractor-pug": "^0.64.0",
 		"@vitejs/plugin-vue": "^5.1.5",
 		"@vue/language-plugin-pug": "^2.1.10",
