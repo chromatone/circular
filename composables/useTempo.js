@@ -3,7 +3,7 @@
  */
 
 import { reactive, computed, watch, onMounted, shallowReactive, ref, } from "vue";
-import { getTransport, start, Frequency, Loop, Sampler, gainToDb, getDraw, } from "tone";
+import { getTransport, start, Frequency, Loop, Sampler, gainToDb, getDraw, MetalSynth, } from "tone";
 import { freqPitch, pitchColor } from "./calculations";
 
 import { Note } from "tonal";
@@ -56,16 +56,9 @@ export function useTempo() {
 
   onMounted(() => {
 
-    metro.pluck = new Sampler({
-      urls: {
-        E1: "logic/high.wav",
-        E2: "logic/low.wav",
-      },
-      volume: -20,
-      attack: 0.001,
-      release: 2,
-      baseUrl: "/audio/metronome/",
-    }).connect(createAudioChannel('circular'))
+    const { channel, volume } = createAudioChannel('circular')
+
+    metro.pluck = new MetalSynth({}).toDestination()
 
     // metro.clock = new Loop(t => {
     //   if (!tempo.midiClock) return

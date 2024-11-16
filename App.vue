@@ -17,7 +17,7 @@ import { version, year } from './package.json'
     a.font-bold.no-underline.flex.items-center.gap-1(href="https://chromatone.center" target="_blank")
       img(src="/logo.svg" width="20" height="20")
       h1.p-0 Chromatone
-    h2.p-0 Elements
+    h2.p-0 Circular metronome
     .flex-1
 
     a.flex.gap-1.items-center.no-underline(href="https://github.com/chromatone/circular/" target="_blank")
@@ -32,7 +32,6 @@ import { version, year } from './package.json'
       h2.text-4xl Circular
       h2.text-2xl Multilayered polyphonic synthesizer app 
       h3.text-sm.max-w-55ch Explore unique sounds of 6 voice polyphony, 4 layers of sound generators for each of them and 2 global effects with any MIDI controller, laptop keyboard and flexible onscreen keyboard with choice of scales while analyzing the output on the global oscilloscope and colorized FFT time-frequency bars. Notes and frequencies are set according to Chromatone.  
-
 
 
   .flex.flex-col.p-2.pb-12.pt-4.gap-2 CIRCULAR

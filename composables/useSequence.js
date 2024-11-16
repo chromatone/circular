@@ -92,7 +92,7 @@ export function useSequence(initial = { over: 4, under: 4, sound: "A", volume: 1
         volume: 1,
         attack: 0.001,
         release: 2,
-        baseUrl: "/audio/metronome/",
+        baseUrl: "/metronome/",
       })),
     });
 

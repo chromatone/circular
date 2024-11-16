@@ -3,6 +3,10 @@ import vue from '@vitejs/plugin-vue'
 import UnoCSS from 'unocss/vite'
 import { viteSingleFile } from "vite-plugin-singlefile"
 
+import Components from 'unplugin-vue-components/vite'
+import Icons from 'unplugin-icons/vite'
+import IconsResolver from 'unplugin-icons/resolver'
+
 export default defineConfig({
   base: './',
   server: {
@@ -11,13 +15,32 @@ export default defineConfig({
   },
   preview: {
     host: "0.0.0.0",
-    port: '8822'
+    port: '8282'
   },
   plugins: [
     vue(),
     UnoCSS(),
     viteSingleFile(),
-    viteBuildScript()
+    viteBuildScript(),
+    Components({
+      dirs: ['./components'],
+      extensions: ['vue', 'ts', 'js'],
+      directoryAsNamespace: true,
+      collapseSamePrefixes: true,
+      globalNamespaces: ['global'],
+      include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
+      exclude: [/node_modules/, /\.git/],
+      resolvers: [
+        IconsResolver({
+          componentPrefix: 'i',
+        }),
+      ],
+    }),
+    Icons({
+      compiler: 'vue3',
+      defaultStyle: 'vertical-align: middle;',
+      autoInstall: true
+    }),
   ],
 })
 
