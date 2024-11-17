@@ -4,11 +4,7 @@ import { onKeyStroke } from "@vueuse/core";
 import LoopSector from "./LoopSector.vue";
 import LoopControl from './LoopControl.vue'
 
-import { getCircleCoord } from "../composables/calculations";
-import { useSequence } from "../composables/useSequence";
-import { levelColor } from "../composables/colors";
-import { tempo } from "../composables/useTempo";
-// import { midi } from "#/use/midi";
+import { getCircleCoord, useSequence, levelColor, tempo, midi } from "use-chromatone";
 import { controls } from './controls'
 import { ref, computed, watch } from 'vue'
 import { gainToDb } from "tone";
@@ -54,29 +50,29 @@ const lastLine = computed(() => {
 const prevCC = ref(0);
 const prevSteps = ref(4);
 
-// watch(
-//   () => midi.cc,
-//   (cc) => {
-//     if (cc.channel != controls.channel) return;
-
-//     if (cc.number == controls.cc[props.order].steps) {
-//       const diff = prevSteps.value - cc.raw;
-//       prevSteps.value = cc.raw;
-//       if (!diff) return;
-//       const can = mutes.value.length - mutesCount.value;
-//       if (can < 0) return;
-//       if (diff > 0 && mutesCount.value <= 1) return;
-//       const index = mutes.value.findIndex((mute) => mute == diff < 0);
-//       mutes.value[index] = diff > 0;
-//       reset();
-//     }
-//     if (cc.number == controls.cc[props.order].rotate) {
-//       const diff = prevCC.value - cc.raw;
-//       prevCC.value = cc.raw;
-//       rotateAccents(diff);
-//     }
-//   }
-// );
+watch(
+  () => midi.cc,
+  (cc) => {
+    if (cc.channel != controls.channel) return;
+    const { steps, rotate } = controls.cc[props.order]
+    if (cc.number == steps) {
+      const diff = prevSteps.value - cc.raw;
+      prevSteps.value = cc.raw;
+      if (!diff) return;
+      const can = mutes.value.length - mutesCount.value;
+      if (can < 0) return;
+      if (diff > 0 && mutesCount.value <= 1) return;
+      const index = mutes.value.findIndex((mute) => mute == diff < 0);
+      mutes.value[index] = diff > 0;
+      reset();
+    }
+    if (cc.number == rotate) {
+      const diff = prevCC.value - cc.raw;
+      prevCC.value = cc.raw;
+      rotateAccents(diff);
+    }
+  }
+);
 </script>
 
 <template lang="pug">
@@ -174,9 +170,9 @@ g(
     i-la-volume-up(x="-18" y="-28")
 
   g.mute.opacity-30.hover-opacity-60.transition.cursor-pointer(
-    :transform="`translate(${850-order*147},${800-order*128})`"
+    :transform="`translate(${850 - order * 147},${800 - order * 128})`"
     @click="mute = !mute"
-    :style="{opacity: mute? 1 : ''}"
+    :style="{ opacity: mute ? 1 : '' }"
     )
     circle(
       style="filter:url(#shadowButton);"

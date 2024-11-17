@@ -17,7 +17,6 @@ const props = defineProps({
 });
 
 
-// arc
 const arc = reactive({
   from: computed(() => props.from <= props.to ? props.from : props.to),
   to: computed(() => props.from > props.to ? props.from : props.to),
@@ -75,7 +74,7 @@ g
     :fill-opacity="op"
     :transform-origin="`${cx} ${cy}`"
     )
-  g(:transform="`translate(${getPolar((arc.from+arc.to)/2,radius-thickness/2).x} ${getPolar((arc.from+arc.to)/2,radius-thickness/2).y})`")
+  g(:transform="`translate(${getPolar((arc.from + arc.to) / 2, radius - thickness / 2).x} ${getPolar((arc.from + arc.to) / 2, radius - thickness / 2).y})`")
     slot
 </template>
 

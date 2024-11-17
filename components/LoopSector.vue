@@ -1,8 +1,6 @@
 <script setup>
-import { levelColor } from "../composables/colors"
-import { getCircleCoord } from '../composables/calculations'
+import { levelColor, getCircleCoord, tempo } from "use-chromatone"
 import { computed } from 'vue'
-import { tempo } from '../composables/useTempo'
 
 const props = defineProps({
   radius: { type: Number, default: 400, },

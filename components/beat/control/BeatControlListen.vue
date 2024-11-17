@@ -1,6 +1,6 @@
 <script setup>
-import { tempo } from '../../../composables/useTempo'
-import { useTuner } from '../../../composables/tuner'
+import { tempo, useTuner } from 'use-chromatone'
+
 const { init, tuner } = useTuner();
 
 </script>

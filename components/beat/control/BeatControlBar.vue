@@ -1,5 +1,5 @@
 <script setup>
-import { levelColor } from "../../../composables/colors"
+import { levelColor } from "use-chromatone"
 import { useClamp } from '@vueuse/math';
 import { computed, reactive, watch } from 'vue'
 

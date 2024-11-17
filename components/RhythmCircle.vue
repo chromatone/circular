@@ -2,12 +2,11 @@
 import CircleCenter from './CircleCenter.vue'
 import CircleOverlay from './CircleOverlay.vue'
 import CircleLoop from './CircleLoop.vue'
-// import { midi } from '../composables/'
-import { tempo } from '../composables/useTempo'
+import { useMidi, tempo, renderMidi, tracks } from 'use-chromatone'
 import { ref, watch } from 'vue'
 
-import { renderMidi } from '../composables/midiRender'
-import { tracks } from '../composables/useSequence'
+const { midi } = useMidi()
+
 import { controls } from './controls'
 
 const overlay = ref(false);
@@ -18,13 +17,13 @@ function resetTracks() {
 
 const prevCC = ref(0)
 
-// watch(() => midi.cc, cc => {
-//   if (cc.channel != controls.channel) return
-//   if (cc.number != controls.tempoCC) return
-//   const diff = cc.raw - prevCC.value
-//   prevCC.value = cc.raw
-//   tempo.bpm = Math.floor(tempo.bpm + diff)
-// })
+watch(() => midi.cc, cc => {
+  if (cc.channel != controls.channel) return
+  if (cc.number != controls.tempoCC) return
+  const diff = cc.raw - prevCC.value
+  prevCC.value = cc.raw
+  tempo.bpm = Math.floor(tempo.bpm + diff)
+})
 
 </script>
 
@@ -52,7 +51,7 @@ const prevCC = ref(0)
       v-tooltip.right="'Reset to Euclidean pattern'"
       transform="translate(20,110) scale(0.75)"
       title="Reset to Euclidean"
-      @click="resetTracks()"
+      @pointerdown="resetTracks()"
       )
       i-tabler-stairs
     beat-control-listen(transform="translate(10,900)")
@@ -61,13 +60,13 @@ const prevCC = ref(0)
     beat-control-button(
       v-tooltip.right="'Toggle info overlay'"
       transform="translate(10,750)"
-      @click="overlay = true"
+      @pointerdown="overlay = true"
       )
       i-healthicons-question
     beat-control-button(
       v-tooltip.left="'Export MIDI file'"
       transform="translate(925,750)"
-      @click="renderMidi(tracks)"
+      @pointerdown="renderMidi(tracks)"
       )
       i-la-file-download
     circle-loop(
@@ -80,7 +79,7 @@ const prevCC = ref(0)
     circle-center(transform="translate(500,500) scale(0.75)")
     circle-overlay.cursor-pointer(
       v-if="overlay"
-      @click="overlay = false"
+      @pointerdown="overlay = false"
       )
 </template>
 

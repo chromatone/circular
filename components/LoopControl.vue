@@ -1,6 +1,5 @@
 <script setup>
-import { getCircleCoord } from '../composables/calculations'
-// import { midi } from '#/use/midi'
+import { getCircleCoord, midi } from 'use-chromatone'
 import { controls } from './controls';
 import { ref, reactive, computed, watch } from 'vue'
 import { useClamp } from '@vueuse/math';
@@ -79,11 +78,11 @@ const allSteps = computed(() => {
 
 const prevCC = ref(0)
 
-// watch(() => midi.cc, cc => {
-//   if (cc.channel != controls.channel || cc.number != props.midiCC) return
-//   prevCC.value = cc.value
-//   arc.inner = cc.value
-// })
+watch(() => midi.cc, cc => {
+  if (cc.channel != controls.channel || cc.number != props.midiCC) return
+  prevCC.value = cc.value
+  arc.inner = cc.value
+})
 
 </script>
 

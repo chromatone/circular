@@ -1,5 +1,5 @@
 <script setup>
-import { tempo } from '../../../composables/useTempo'
+import { tempo } from 'use-chromatone'
 
 function drag(event) {
   tempo.bpm += (event.delta[0] - event.delta[1]) / 16

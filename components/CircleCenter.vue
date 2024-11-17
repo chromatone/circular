@@ -1,5 +1,5 @@
 <script setup>
-import { useTempo } from '../composables/useTempo'
+import { useTempo } from 'use-chromatone'
 
 import { reactive, computed } from 'vue'
 

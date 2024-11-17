@@ -1,5 +1,5 @@
 <script setup>
-import { tempo, tapTempo } from '../../../composables/useTempo'
+import { tempo, tapTempo } from 'use-chromatone'
 </script>
 
 <template lang="pug">
