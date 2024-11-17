@@ -39,7 +39,7 @@
 		"floating-vue": "^5.2.2",
 		"tonal": "^6.3.0",
 		"tone": "^15.0.4",
-		"use-chromatone": "^2.9.8-0",
+		"use-chromatone": "^2.9.9-0",
 		"vue": "^3.5.12",
 		"webmidi": "^3.1.11"
 	},

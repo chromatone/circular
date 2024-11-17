@@ -32,6 +32,7 @@ const started = ref(false)
       h3.text-sm.max-w-55ch Two cycles of any number of any subdivisions played in both normal and accented variants. The whole universe of polyrhythms and polymeters in your hands, just dial numbers and toggle steps to find unique patterns to play along. With MIDI clock out!
 
 
+
   .flex.flex-col.p-2.pb-12.pt-4.gap-2
     RhythmCircle
 </template>
