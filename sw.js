@@ -1,9 +1,20 @@
-const CACHE_NAME = 'circular-cache-v.0.1.1';
+const CACHE_NAME = 'circular-cache-v.0.1.1-0';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
   '/logo.svg',
-  '/audio/*.mp3'
+  '/audio/metronome/ping/high.mp3',
+  '/audio/metronome/ping/low.mp3',
+  '/audio/metronome/block/high.mp3',
+  '/audio/metronome/block/low.mp3',
+  '/audio/metronome/seiko/high.mp3',
+  '/audio/metronome/seiko/low.mp3',
+  '/audio/metronome/tongue/high.mp3',
+  '/audio/metronome/tongue/low.mp3',
+  '/audio/metronome/synth/high.mp3',
+  '/audio/metronome/synth/low.mp3',
+  '/audio/metronome/keyboard/high.mp3',
+  '/audio/metronome/keyboard/low.mp3',
 ];
 
 // Install Service Worker
