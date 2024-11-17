@@ -1,9 +1,10 @@
 <script setup>
-import { ref, watch } from 'vue';
-import { onKeyDown, useCycleList } from '@vueuse/core';
+import { ref } from 'vue';
 import RhythmCircle from './components/RhythmCircle.vue'
 
 import { version, year } from './package.json'
+
+const started = ref(false)
 
 </script>
 
@@ -22,13 +23,13 @@ import { version, year } from './package.json'
       span v.{{ version }}
     //- span MIT {{ year }}
 
-    //- article.z-1000.fixed.top-0.left-0.right-0.p-8.flex.flex-col.gap-6.bg-dark-800.bg-op-50.backdrop-blur
+    article.z-1000.fixed.top-0.left-0.right-0.p-8.flex.flex-col.gap-6.bg-dark-800.bg-op-50.backdrop-blur(v-if="!started" @click="started = true")
       a.font-bold.no-underline.flex.items-center.gap-1(href="https://chromatone.center" target="_blank")
         img(src="/logo.svg" width="30" height="30")
         h1.text-xl Chromatone
-      h2.text-4xl Circular
-      h2.text-2xl Multilayered polyphonic synthesizer app 
-      h3.text-sm.max-w-55ch Explore unique sounds of 6 voice polyphony, 4 layers of sound generators for each of them and 2 global effects with any MIDI controller, laptop keyboard and flexible onscreen keyboard with choice of scales while analyzing the output on the global oscilloscope and colorized FFT time-frequency bars. Notes and frequencies are set according to Chromatone.  
+      h2.text-4xl Circular metronome
+      h2.text-2xl Polythythm and polymeter practice instrument
+      h3.text-sm.max-w-55ch Two cycles of any number of any subdivisions played in both normal and accented variants. The whole universe of polyrhythms and polymeters in your hands, just dial numbers and toggle steps to find unique patterns to play along. With MIDI clock out!
 
 
   .flex.flex-col.p-2.pb-12.pt-4.gap-2
