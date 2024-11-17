@@ -3,18 +3,14 @@ import { ref, watch } from 'vue';
 import { onKeyDown, useCycleList } from '@vueuse/core';
 import RhythmCircle from './components/RhythmCircle.vue'
 
-
 import { version, year } from './package.json'
-
-
-
 
 </script>
 
 <template lang="pug">
 .flex.flex-col.items-stretch.transition-all.duration-500.ease-out.select-none.rounded-8.shadow-xl.w-full.h-full.text-white.flex-1 
 
-  .fixed.m-4.rounded-xl.bg-dark-800.bg-op-40.p-2.text-light-800.flex.gap-2.items-center.flex-wrap
+  .z-100.fixed.rounded.bg-dark-800.bg-op-40.p-2.text-light-800.flex.gap-2.items-center.flex-wrap.text-sm
     a.font-bold.no-underline.flex.items-center.gap-1(href="https://chromatone.center" target="_blank")
       img(src="/logo.svg" width="20" height="20")
       h1.p-0 Chromatone

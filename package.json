@@ -32,16 +32,11 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
-		"@tonejs/midi": "^2.0.28",
 		"@unocss/reset": "^0.64.0",
 		"@vueuse/core": "^11.2.0",
 		"@vueuse/gesture": "^2.0.0",
 		"@vueuse/math": "^11.2.0",
-		"aubiojs": "^0.2.1",
-		"colord": "^2.9.3",
 		"floating-vue": "^5.2.2",
-		"midi-writer-js": "^3.1.1",
-		"ola": "^1.2.1",
 		"tonal": "^6.3.0",
 		"tone": "^15.0.4",
 		"use-chromatone": "^2.9.8-0",

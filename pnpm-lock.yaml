@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@tonejs/midi':
-        specifier: ^2.0.28
-        version: 2.0.28
       '@unocss/reset':
         specifier: ^0.64.0
         version: 0.64.1
@@ -23,21 +20,9 @@ importers:
       '@vueuse/math':
         specifier: ^11.2.0
         version: 11.2.0(vue@3.5.13)
-      aubiojs:
-        specifier: ^0.2.1
-        version: 0.2.1
-      colord:
-        specifier: ^2.9.3
-        version: 2.9.3
       floating-vue:
         specifier: ^5.2.2
         version: 5.2.2(vue@3.5.13)
-      midi-writer-js:
-        specifier: ^3.1.1
-        version: 3.1.1
-      ola:
-        specifier: ^1.2.1
-        version: 1.2.1
       tonal:
         specifier: ^6.3.0
         version: 6.3.0
