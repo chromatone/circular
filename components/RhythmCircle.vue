@@ -69,6 +69,12 @@ watch(() => midi.cc, cc => {
       @pointerdown="renderMidi(tracks)"
       )
       i-la-file-download
+    beat-control-button(
+      v-tooltip.left="'Toggle MIDI Clock out'"
+      transform="translate(810,-30)"
+      @pointerdown="tempo.midiClock = !tempo.midiClock"
+      )
+      i-mdi-midi-input.transition(:style="{ opacity: tempo.midiClock ? 1 : 0.3 }")
     circle-loop(
       v-for="(loop, i) in 2",
       :key="i"

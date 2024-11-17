@@ -1,5 +1,5 @@
 <script setup>
-
+const props = defineProps({ active: Boolean })
 
 </script>
 
