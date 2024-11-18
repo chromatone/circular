@@ -13,6 +13,7 @@ g.math.cursor-pointer(
   font-size="36"
   :drag-options="{ filterTaps: true }"
   v-drag="drag"
+  v-wheel="drag"
   @dblclick="tempo.bpm = 120"
 )
   rect(

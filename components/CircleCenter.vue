@@ -25,6 +25,7 @@ g.center(
 )
   g.bpm.cursor-grab.active-cursor-grabbing(
     v-drag="drag"
+    v-wheel="drag"
     v-tooltip.bottom="'Drag to change BPM'"
     @dblclick="tempo.bpm = 120"
   )
