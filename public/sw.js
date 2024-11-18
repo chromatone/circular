@@ -1,4 +1,4 @@
-const CACHE_NAME = 'circular-cache-v.0.1.1-0';
+const CACHE_NAME = 'circular-cache-v.0.1.2';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',

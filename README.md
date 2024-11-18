@@ -1,2 +1,3 @@
-# circular
-Circular polyrhythmic metronome web-app
+# Circular Metronome
+
+Polyrhythm/polymeter metronome single file web-app
