@@ -7,7 +7,7 @@ import LoopControl from './LoopControl.vue'
 import { getCircleCoord, useSequence, levelColor, tempo, midi } from "use-chromatone";
 import { controls } from './controls'
 import { ref, computed, watch } from 'vue'
-import { gainToDb } from "tone";
+
 
 
 const props = defineProps({

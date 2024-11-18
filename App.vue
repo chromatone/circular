@@ -14,7 +14,7 @@ const more = ref(false)
 article.z-1000.fixed.top-0.left-0.bottom-0.right-0.p-8.flex.flex-col.gap-6.bg-dark-800.bg-op-50.backdrop-blur.text-light-100(v-if="!started")
   .flex
 
-    .flex-1.flex.flex-col.gap-2.max-w-55ch
+    .flex-1.flex.flex-col.gap-4
       .flex
         a.font-bold.no-underline.flex.items-center.gap-1(href="https://chromatone.center" target="_blank")
           img(src="/logo.svg" width="30" height="30")

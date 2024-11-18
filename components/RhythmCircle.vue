@@ -5,9 +5,12 @@ import CircleLoop from './CircleLoop.vue'
 import { useMidi, tempo, renderMidi, tracks } from 'use-chromatone'
 import { ref, watch } from 'vue'
 
+const { toggle } = useFullscreen()
+
 const { midi } = useMidi()
 
 import { controls } from './controls'
+import { useFullscreen } from '@vueuse/core'
 
 const overlay = ref(false);
 
@@ -54,7 +57,6 @@ watch(() => midi.cc, cc => {
       @pointerdown="resetTracks()"
       )
       i-tabler-stairs
-    beat-control-listen(transform="translate(10,900)")
     beat-control-tap(transform="translate(785,900)")
     beat-control-transport(transform="translate(910,-30)")
     beat-control-button(
@@ -64,6 +66,12 @@ watch(() => midi.cc, cc => {
       )
       i-healthicons-question
     beat-control-button(
+      v-tooltip.right="'Toggle full screen'"
+      transform="translate(10,850)"
+      @pointerdown="toggle()"
+      )
+      i-la-expand
+    beat-control-button(
       v-tooltip.left="'Export MIDI file'"
       transform="translate(925,750)"
       @pointerdown="renderMidi(tracks)"
@@ -71,7 +79,7 @@ watch(() => midi.cc, cc => {
       i-la-file-download
     beat-control-button(
       v-tooltip.left="'Toggle MIDI Clock out'"
-      transform="translate(810,-30)"
+      transform="translate(90, 850)"
       @pointerdown="tempo.midiClock = !tempo.midiClock"
       )
       i-mdi-midi-input.transition(:style="{ opacity: tempo.midiClock ? 1 : 0.3 }")

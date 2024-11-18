@@ -23,7 +23,7 @@ g.center(
   style="touch-action:none"
   text-anchor="middle",
 )
-  g.bpm.cursor-pointer(
+  g.bpm.cursor-grab.active-cursor-grabbing(
     v-drag="drag"
     v-tooltip.bottom="'Drag to change BPM'"
     @dblclick="tempo.bpm = 120"
