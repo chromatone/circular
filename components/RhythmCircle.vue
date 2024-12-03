@@ -2,7 +2,10 @@
 import CircleCenter from './CircleCenter.vue'
 import CircleOverlay from './CircleOverlay.vue'
 import CircleLoop from './CircleLoop.vue'
-import { useMidi, tempo, renderMidi, tracks } from 'use-chromatone'
+import { renderMidi } from 'use-chromatone/render'
+import { tracks } from 'use-chromatone/sequence'
+import { useMidi } from 'use-chromatone/midi'
+import { tempo } from 'use-chromatone/tempo'
 import { ref, watch } from 'vue'
 
 const { toggle } = useFullscreen()

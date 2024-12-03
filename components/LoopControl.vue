@@ -1,5 +1,6 @@
 <script setup>
-import { getCircleCoord, midi } from 'use-chromatone'
+import { getCircleCoord } from 'use-chromatone/calculations'
+import { midi } from 'use-chromatone/midi'
 import { controls } from './controls';
 import { ref, reactive, computed, watch } from 'vue'
 import { useClamp } from '@vueuse/math';

@@ -1,5 +1,5 @@
 <script setup>
-import { tempo } from 'use-chromatone'
+import { tempo } from 'use-chromatone/tempo'
 
 </script>
 

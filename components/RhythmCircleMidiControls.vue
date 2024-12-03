@@ -1,5 +1,5 @@
 <script setup>
-import { midi } from 'use-chromatone';
+import { midi } from 'use-chromatone/midi';
 import { controls } from './controls';
 </script>
 

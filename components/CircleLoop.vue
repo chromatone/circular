@@ -4,11 +4,13 @@ import { onKeyStroke } from "@vueuse/core";
 import LoopSector from "./LoopSector.vue";
 import LoopControl from './LoopControl.vue'
 
-import { getCircleCoord, useSequence, levelColor, tempo, midi } from "use-chromatone";
+import { getCircleCoord } from "use-chromatone/calculations";
+import { useSequence } from "use-chromatone/sequence";
+import { levelColor } from "use-chromatone/colors";
+import { tempo } from "use-chromatone/tempo";
+import { midi } from "use-chromatone/midi";
 import { controls } from './controls'
 import { ref, computed, watch } from 'vue'
-
-
 
 const props = defineProps({
   radius: { type: Number, default: 400 },

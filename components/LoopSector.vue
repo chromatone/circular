@@ -1,5 +1,7 @@
 <script setup>
-import { levelColor, getCircleCoord, tempo } from "use-chromatone"
+import { getCircleCoord } from "use-chromatone/calculations"
+import { levelColor } from "use-chromatone/colors"
+import { tempo } from "use-chromatone/tempo"
 import { computed } from 'vue'
 
 const props = defineProps({
